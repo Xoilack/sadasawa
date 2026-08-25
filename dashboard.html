@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Adni81</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+      <div class="brand">
+        <h2>🎯 ADNI81</h2>
+        <span>Performance Dashboard</span>
+      </div>
+      <div class="nav-actions">
+        <span id="rowCount" style="font-size:12px;color:var(--text-2);font-weight:600;"></span>
+        <button id="btnRefresh" class="btn-outline">🔄 Refresh</button>
+        <button id="btnImport" class="btn-outline">📥 Import JSON</button>
+        <button id="btnExport" class="btn-outline">📤 Export JSON</button>
+        <button id="btnLogout" class="btn-outline danger">🚪 Logout</button>
+      </div>
+    </nav>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card green">
+        <div class="stat-label">💵 Total Deposit</div>
+        <div class="stat-value" id="statDeposit">Rp 0</div>
+        <div class="stat-sub">Akumulasi semua periode</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-label">💸 Total Withdrawal</div>
+        <div class="stat-value" id="statWithdrawal">Rp 0</div>
+        <div class="stat-sub">Akumulasi semua periode</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">📊 Profit / Loss</div>
+        <div class="stat-value" id="statProfit">Rp 0</div>
+        <div class="stat-sub">Selisih deposit - withdrawal</div>
+      </div>
+      <div class="stat-card yellow">
+        <div class="stat-label">🔄 Net Turnover</div>
+        <div class="stat-value" id="statTurnover">Rp 0</div>
+        <div class="stat-sub">Total taruhan bersih</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-label">👤 Total FTD</div>
+        <div class="stat-value" id="statFTD">0</div>
+        <div class="stat-sub">Member baru</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">📅 Hari Terisi</div>
+        <div class="stat-value" id="statDays">0</div>
+        <div class="stat-sub">Hari dengan data</div>
+      </div>
+    </div>
+
+    <!-- Monthly Table -->
+    <div class="panel">
+      <div class="panel-header">
+        <h3>📆 Rekap Bulanan</h3>
+        <span class="badge">ADNI81</span>
+      </div>
+      <div class="panel-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Bulan</th>
+                <th class="num">Hari</th>
+                <th class="num">Deposit</th>
+                <th class="num">Withdrawal</th>
+                <th class="num">Profit</th>
+                <th class="num">Turnover</th>
+              </tr>
+            </thead>
+            <tbody id="monthlyTableBody">
+              <tr><td colspan="6" style="text-align:center;padding:30px;color:var(--text-2);">Memuat data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Table -->
+    <div class="panel">
+      <div class="panel-header">
+        <h3>📋 Data Harian Terakhir</h3>
+        <span class="badge" id="lastUpdate">—</span>
+      </div>
+      <div class="panel-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th class="num">Deposit Trx</th>
+                <th class="num">Deposit Nominal</th>
+                <th class="num">Withdrawal Trx</th>
+                <th class="num">Withdrawal Nominal</th>
+                <th class="num">Profit</th>
+                <th class="num">Turnover</th>
+              </tr>
+            </thead>
+            <tbody id="recentTableBody">
+              <tr><td colspan="7" style="text-align:center;padding:30px;color:var(--text-2);">Memuat data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
