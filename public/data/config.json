@@ -1,0 +1,7 @@
+{
+  "_note": "Admin panel Adni81 - Google Sheets sudah tidak dipakai",
+  "use_admin": true,
+  "store_name": "ADNI81",
+  "sheet_url": null,
+  "data_source": "admin_panel"
+}
